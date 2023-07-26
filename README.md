@@ -1,2 +1,2 @@
-# dk-vae-lstm
-DK-VAE-LSTM: A Domain Knowledge Prior Variational LSTM for Drought Monitoring
+# DK-VAE-LSTM: A Domain Knowledge Prior Variational LSTM for Drought Monitoring
+It is coming soon.
