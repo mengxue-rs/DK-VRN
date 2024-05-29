@@ -3,7 +3,7 @@
 %        Version: 0.1
 %        Date   : May 2024
 %
-%    This demo shows the DK-VRN model for european drought monitoring.
+%    This demo shows the DK-VRN model for drought monitoring.
 %
 %    ./data        ....... To be uploaded.
 %    ./tools       ....... To be uploaded.
