@@ -1,5 +1,5 @@
 % DK-VRN: Domain Knowledge-Driven Variational Recurrent Networks for Drought Monitoring DEMO.
-%        URL    : Under Reviewing
+%        URL    : Under Revision
 %        Version: 1.0
 %        Date   : May 2024
 %
@@ -8,7 +8,7 @@
 %    ./data        ....... To be uploaded.
 %    ./tools       ....... To be uploaded.
 %    main.py       ....... To be uploaded.
-%    data.py       ....... To be uploaded.
+%    dataset.py    ....... To be uploaded.
 %    loss.py       ....... A script implementing loss functions.
 %    functions.py  ....... A script implementing training/test/compute_metrics functions.
 %    model.py      ....... A script implementing the DK-VRN model.
@@ -21,7 +21,7 @@
 %   --------------------------------------
 %   Cite:
 %   --------------------------------------
-%   [1] Domain Knowledge-Driven Variational Recurrent Networks for Drought Monitoring (Under Reviewing)
+%   [1] Domain Knowledge-Driven Variational Recurrent Networks for Drought Monitoring (Under Revision)
 %   --------------------------------------
 %   Copyright & Disclaimer
 %   --------------------------------------
