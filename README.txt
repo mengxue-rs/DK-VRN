@@ -29,5 +29,5 @@
 %   The programs contained in this package are granted free of charge for
 %   research and education purposes only.
 %
-%   Copyright (c) 2021 by Mengxue Zhang & Miguel-Angel Fernandez-Torres, Gustau Camps-Valls
+%   Copyright (c) 2024 by Mengxue Zhang & Miguel-Angel Fernandez-Torres, Gustau Camps-Valls
 %   mx.zhang.rs@gmail.com & mengxue@alumni.uv.es
