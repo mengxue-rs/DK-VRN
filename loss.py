@@ -28,8 +28,8 @@ def reconstruction_loss(recon_x, x, x_mask=None):
 
 
 def kl_loss(mu1, logvar1, mu2=None, logvar2=None):
+    # see Appendix B from VAE paper: https://arxiv.org/abs/1312.6114
     if mu2 is None or logvar2 is None:
-        # see Appendix B from VAE paper: https://arxiv.org/abs/1312.6114
         KLD = 0.5 * torch.mean(logvar1.exp() + mu1.pow(2) - 1 - logvar1)
     else:
         # Equation 6~7: https://arxiv.org/abs/1606.05908
