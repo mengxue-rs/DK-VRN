@@ -21,12 +21,14 @@ def train(model, train_data_loader, ratio1, ratio2, lr=1e-4, grad_clip=1e-5, dev
         loss_dk = REC_LOSS(pred_x1, batch_x1) * ratio2[0] + KL_LOSS(mu1, logvar1) * ratio2[1]
 
         # Equation 8
-        loss_ecv = (CLF_LOSS(pred_y, batch_gt, batch_mask) +
+        loss_ecv = (CLF_LOSS(pred_y, batch_gt, batch_mask) * ratio1[0] +
                     REC_LOSS(pred_x1, batch_x1) * ratio1[1] +
                     KL_LOSS(mu0, logvar0, mu1.detach(), logvar1.detach()) * ratio1[2])
 
         # Equation 9
         loss = loss_dk + loss_ecv
+
+        # Back-Propagation
         loss.backward()
 
         """
