@@ -3,14 +3,21 @@ author: mengxue
 email: mx.zhang.rs@gmail.com
 last date: May 29 2024
 """
-
+import torch
 from dk_vrn import DK_VRN
 from functions import train, test, compute_metrics
+from tools.drought_index import DROUGHT_INDEX
 
 """
-First step: loading ECVs (ERA5), Domain Knowledge (SPEIs), and Ground Truth (EM-DAT)
+First step: generation of Domain Knowledge (SPEIs) from ECVs and conversion to probability
 """
-import torch
+idx_data = None
+if idx_data is not None:
+    idx_prob = DROUGHT_INDEX.idx2prob(idx_data)
+
+"""
+Second step: ECVs (ERA5), Domain Knowledge (SPEIs), and Ground Truth (EM-DAT) for training
+"""
 tpb = 256 # number of time step
 b_s = 4 # batch size
 L1 = 2 # feature number of ERA5
@@ -21,17 +28,17 @@ x1 = torch.zeros((tpb, b_s, L2))
 y = torch.zeros((tpb, b_s))
 
 """
-Second step: network init and training
+Third step: network init and training
 """
 network = DK_VRN(ninp1=L1, ninp2=L2, nhid=32, en_hid=32, de_hid=32, nout=1)
-n_inference = 5
+n_inference = 10 # number of generated outputs (Eq. 14)
 
 
 lr = 1e-4 # learning rate
 grad_clip = 1e-5 # gradient clipping
 n_epochs = 200
-ratio1 = [1.0, 1.0, 1e-2]
-ratio2 = [1.0, 1.0]
+ratio1 = [1.0, 1.0, 1e-2] # ratio of loss gradients (Eq. 8)
+ratio2 = [1.0, 1.0] # ratio of loss gradients (Eq. 7)
 
 train_data = None
 val_data = None
@@ -39,7 +46,6 @@ test_data = None
 train_data_loader = None
 val_data_loader = None
 test_data_loader = None
-
 
 if train_data and val_data and train_data_loader and val_data_loader:
     best_val_roc = None
