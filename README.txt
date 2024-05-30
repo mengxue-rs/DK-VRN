@@ -3,7 +3,7 @@
 %        Version: 1.0
 %        Date   : May 2024
 %
-%    This demo shows the DK-VRN model for european drought monitoring.
+%    This demo shows the DK-VRN model for European drought monitoring.
 %
 %    ./data        ....... To be uploaded.
 %    ./tools       ....... To be uploaded.
@@ -16,7 +16,7 @@
 %
 %
 %   --------------------------------------
-%   Note: Required core python libraries are covered
+%   Note: Required core Python libraries are covered
 %   --------------------------------------
 %   pip install -r requirements.txt
 %   --------------------------------------
@@ -32,3 +32,4 @@
 %
 %   Copyright (c) 2021 by Mengxue Zhang & Miguel-Angel Fernandez-Torres, Gustau Camps-Valls
 %   mx.zhang.rs@gmail.com & mengxue@alumni.uv.es
+
