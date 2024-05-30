@@ -1,5 +1,5 @@
 % DK-VRN: Domain Knowledge-Driven Variational Recurrent Networks for Drought Monitoring DEMO.
-%        URL    : Under Reviewing
+%        URL    : Under Revision
 %        Version: 1.0
 %        Date   : May 2024
 %
@@ -22,7 +22,7 @@
 %   --------------------------------------
 %   Cite:
 %   --------------------------------------
-%   [1] Domain Knowledge-Driven Variational Recurrent Networks for Drought Monitoring (Under Reviewing)
+%   [1] Domain Knowledge-Driven Variational Recurrent Networks for Drought Monitoring (Under Revision)
 %   --------------------------------------
 %   Copyright & Disclaimer
 %   --------------------------------------
