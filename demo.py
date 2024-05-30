@@ -11,7 +11,7 @@ from functions import train, test, compute_metrics
 First step: loading ECVs (ERA5), Domain Knowledge (SPEIs), and Ground Truth (EM-DAT)
 """
 import torch
-tpb = 32 # number of time step
+tpb = 256 # number of time step
 b_s = 4 # batch size
 L1 = 2 # feature number of ERA5
 L2 = 3 # feature number of SPEIs
@@ -57,9 +57,9 @@ if train_data and val_data and train_data_loader and val_data_loader:
             with open(save_path, 'wb') as f:
                 torch.save(network, f)
 else:
-    print("x0: {}".format(x0.detach().cpu().numpy().shape))
-    print("x1: {}".format(x1.detach().cpu().numpy().shape))
-    print("y: {}".format(y.detach().cpu().numpy().shape))
+    print("ECV: {}".format(x0.detach().cpu().numpy().shape))
+    print("Index: {}".format(x1.detach().cpu().numpy().shape))
+    print("Label: {}".format(y.detach().cpu().numpy().shape))
 
 """
 Last step: network inference
@@ -83,5 +83,5 @@ if test_data and test_data_loader:
 else:
     pred_y = network.infer(x0=x0)
     pred_ny = network.infer_with_uncertainty(x0=x0, n_z=n_inference)
-    print("pred_y: {}".format(pred_y.detach().cpu().numpy().shape))
-    print("pred_y_with_uncertainty: {}".format(pred_ny.detach().cpu().numpy().shape))
+    print("Pred Prob: {}".format(pred_y.detach().cpu().numpy().shape))
+    print("Pred Prob with Uncertainty: {}".format(pred_ny.detach().cpu().numpy().shape))
