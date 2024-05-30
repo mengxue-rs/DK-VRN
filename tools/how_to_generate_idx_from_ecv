@@ -1,0 +1,20 @@
+Reference: https://climate-indices.readthedocs.io/en/latest/
+Lib: climate_indices 2.0.0
+
+
+## generate PNP
+
+process_climate_indices --index pnp --periodicity monthly --netcdf_precip ./ecv4idx/precipitation_era5_month.nc --var_name_precip precipitation_era5  --output_file_base ./output/ --scales 1 --calibration_start_year 1986 --calibration_end_year 2008 --multiprocessing all
+
+## generate SPI
+
+process_climate_indices --index spi --periodicity monthly --netcdf_precip ./ecv4idx/precipitation_era5_month.nc --var_name_precip precipitation_era5  --output_file_base ./output/ --scales 1 --calibration_start_year 1986 --calibration_end_year 2008 --multiprocessing all
+
+## generate SPEI
+
+# using temp to estimate PET
+process_climate_indices --index spei --periodicity monthly --netcdf_precip ./ecv4idx/era5-mean-tp-1m.nc --var_name_precip tp --netcdf_temp ./ecv4idx/era5-mean-t2m-1m.nc --var_name_temp t2m --output_file_base ./output/ --scales 1 3 6 9 12 24 --calibration_start_year 1986 --calibration_end_year 2008 --multiprocessing all
+
+# using PET
+process_climate_indices --index spei --periodicity monthly --netcdf_precip ./ecv4idx/precipitation_era5_month.nc --var_name_precip precipitation_era5 --netcdf_pet ./ecv4idx/potential_evaporation_month.nc --var_name_pet Ep --output_file_base ./output/ --scales 3 6 9 12 --calibration_start_year 1986 --calibration_end_year 2008 --multiprocessing all
+
